@@ -4,8 +4,12 @@ const conf = require('./config/defaultConf');
 
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello');
+    res.setHeader('Content-Type', 'text/html');
+    res.write('<html>');
+    res.write('<body>');
+    res.write("Hello Haaaaa!");
+    res.write('</body>');
+    res.end('</html>');
 });
 
 server.listen(conf.port, conf.hostname, () => {
